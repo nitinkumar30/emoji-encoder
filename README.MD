@@ -1,7 +1,6 @@
 # ✨ Emoji Encoder: Hide Messages in Plain Sight ✨   
 
-
-![GitHub Actions](https://img.shields.io/github/actions/workflow/status/nitinkumar30/emoji-encoder/deploy.yml?label=GitHub%20Actions&logo=github)
+![GitHub Actions](https://img.shields.io/github/actions/workflow/status/nitinkumar30/emoji-encoder/deploy.yaml?label=GitHub%20Actions&logo=github)
 ![Latest Commit](https://img.shields.io/github/last-commit/nitinkumar30/emoji-encoder?color=green)
 
 Welcome to the Emoji Encoder project\! This is a fun and simple web tool that allows you to hide secret messages within a string of emojis or alphabet letters. It uses a clever encoding technique to make your message invisible to the naked eye, allowing you to share confidential text in a playful and unconventional way. 🤫
@@ -82,6 +81,7 @@ That's it\! The application will load immediately, and you can start encoding an
 ## 💖 Author
 
 [Nitin Kumar](https://linkedin.com/in/nitin30kumar/)
+
 
 
 
