@@ -12,50 +12,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container-fluid my-5">
-        <div class="card p-4 encoder-card">
+    <div class="container">
+        <div class="encoder-container centered-card">
             <h1 class="text-center mb-3">Hide a message in an emoji</h1>
             <p class="text-center text-secondary mb-4">This tool allows you to encode a hidden message into an emoji or alphabet letter. You can copy and paste text with a hidden message in it to decode the message.</p>
-            
-            <div class="row align-items-stretch">
-                <div class="col-md-6 d-flex flex-column">
-                    <div class="d-flex justify-content-center align-items-center mb-4 switch-container">
-                        <label class="form-check-label me-3" for="mode-switch">Decode</label>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="mode-switch" role="switch">
+
+            <div class="d-flex justify-content-center align-items-center mb-4 switch-container">
+                <label class="form-check-label me-3" for="mode-switch">Decode</label>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="mode-switch" role="switch">
+                </div>
+                <label class="form-check-label ms-2 fw-bold" for="mode-switch">Encode</label>
+            </div>
+
+            <div class="mb-4">
+                <textarea id="text-input" class="form-control" rows="4" placeholder="Enter text to encode"></textarea>
+            </div>
+
+            <div id="encode-options">
+                <div class="mb-4">
+                    <h5>Pick an emoji</h5>
+                    <div id="emoji-picker" class="picker">
                         </div>
-                        <label class="form-check-label ms-2 fw-bold" for="mode-switch">Encode</label>
-                    </div>
-
-                    <div class="mb-4">
-                        <textarea id="text-input" class="form-control" rows="4" placeholder="Enter text to encode"></textarea>
-                    </div>
-
-                    <div id="encode-options">
-                        <div class="mb-4">
-                            <h5>Pick an emoji</h5>
-                            <div id="emoji-picker" class="picker"></div>
-                        </div>
-
-                        <div class="mb-4">
-                            <h5>Or pick a standard alphabet letter</h5>
-                            <div id="letter-picker" class="picker"></div>
-                        </div>
-                    </div>
-
-                    <div class="mt-4">
-                        <textarea id="output" class="form-control" rows="4" readonly placeholder="Output will appear here..."></textarea>
-                    </div>
                 </div>
 
-                <div class="col-md-6 d-flex align-items-center justify-content-center">
-                    <div id="character-container" class="w-100 h-100">
-                        <div class="placeholder-text text-center">Your 3D character will appear here.</div>
-                    </div>
+                <div class="mb-4">
+                    <h5>Or pick a standard alphabet letter</h5>
+                    <div id="letter-picker" class="picker">
+                        </div>
                 </div>
             </div>
-            
-            <div class="text-center mt-4">
+
+            <div class="mb-4">
+                <textarea id="output" class="form-control" rows="4" readonly placeholder="Output will appear here..."></textarea>
+            </div>
+            <div class="text-center">
                  <a href="https://github.com/paulgb/emoji-encoder" class="source-link" target="_blank">Source on GitHub</a>
             </div>
         </div>
