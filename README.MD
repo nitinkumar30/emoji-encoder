@@ -71,11 +71,12 @@ That's it\! The application will load immediately, and you can start encoding an
 
 ## ▶️ Working video
 
-![Working Video of emoji encoder](emoji-encoder.mp4)
+![Working Video of emoji encoder](https://github.com/nitinkumar30/emoji-encoder/blob/main/emoji-encoder.mp4)
 
 -----
 
 ## 💖 Author
 
 [Nitin Kumar](https://linkedin.com/in/nitin30kumar/)
+
 
