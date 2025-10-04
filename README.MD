@@ -74,13 +74,17 @@ That's it\! The application will load immediately, and you can start encoding an
 
 ## ▶️ Working video
 
-![Working Video of emoji encoder](https://github.com/nitinkumar30/emoji-encoder/blob/main/emoji-encoder.mp4)
+
+<video width="320" height="240" controls>
+  <source src="emoji-encoder.mp4" type="video/mp4">
+</video>
 
 -----
 
 ## 💖 Author
 
 [Nitin Kumar](https://linkedin.com/in/nitin30kumar/)
+
 
 
 
