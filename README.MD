@@ -72,7 +72,7 @@ That's it\! The application will load immediately, and you can start encoding an
 
 -----
 
-## ▶️ Working video
+## ⚠️ Working video
 
 
 <video width="320" height="240" controls>
@@ -81,9 +81,17 @@ That's it\! The application will load immediately, and you can start encoding an
 
 -----
 
+## 📹 Disclaimer
+
+1. Open this project in desktop/laptop for best usage
+2. You need to do CTRL + A after selecting the emoji/character for encoding for proper working (due to security reasons)
+
+-----
+
 ## 💖 Author
 
 [Nitin Kumar](https://linkedin.com/in/nitin30kumar/)
+
 
 
 
