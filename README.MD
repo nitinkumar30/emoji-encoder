@@ -1,99 +1,252 @@
-# ✨ Emoji Encoder: Hide Messages in Plain Sight ✨   
+# 🧠 **Emoji Encoder Automation — Test Framework**
 
 ![GitHub Actions](https://img.shields.io/github/actions/workflow/status/nitinkumar30/emoji-encoder/deploy.yaml?label=GitHub%20Actions&logo=github)
 ![Latest Commit](https://img.shields.io/github/last-commit/nitinkumar30/emoji-encoder?color=green)
 
-Welcome to the Emoji Encoder project\! This is a fun and simple web tool that allows you to hide secret messages within a string of emojis or alphabet letters. It uses a clever encoding technique to make your message invisible to the naked eye, allowing you to share confidential text in a playful and unconventional way. 🤫
+Welcome to **Emoji Encoder Automation**, an end-to-end **Python + Selenium** automation framework 🧩 built to test the functionality of the [Emoji Encoder Web App](https://emojiencoder.netlify.app/).
+It ensures the app correctly **encodes** and **decodes** secret text using emojis 🔐.
 
------
+---
 
-## ⚙️ How It Works
+## 🏗️ **Project Overview**
 
-This tool operates on a simple but effective principle: it takes your text and a selected "carrier" emoji or letter, then encodes the text by manipulating the Unicode character codes.
+| Feature                  | Description                                |
+| ------------------------ | ------------------------------------------ |
+| 🚀 **Framework Type**    | UI Test Automation Framework               |
+| 🧰 **Core Stack**        | Python, Selenium, Pytest                   |
+| 🧪 **Reporting**         | Custom HTML + Allure + Logs + Screenshots  |
+| 🪄 **Design Pattern**    | Page Object Model (POM)                    |
+| 🧭 **Browser Support**   | Google Chrome (Headless / UI mode)         |
+| 📂 **Reports Generated** | Screenshots, logs, and custom HTML summary |
 
-  * **Encoding:** When you enter text and select a carrier, the `encode()` function in `script.js` converts each character of your message into its Unicode code point. It then adds the code point of the carrier to each of these. The final output is the carrier followed by this new sequence of characters, which looks like a string of random emojis or letters.
-  * **Decoding:** The `decode()` function reverses this process. It takes the first character of the input (the carrier), gets its code point, and then subtracts that code point from each subsequent character in the string. The result is your original, hidden message.
+---
 
-The project also uses a smooth CSS transition to hide or show the emoji and letter pickers, depending on whether you are in "encode" or "decode" mode.
-
------
-
-## 💡 Use Cases
-
-This tool isn't just a toy\! It can be used for:
-
-  * **Fun & Games:** Send cryptic messages to friends who also have the decoder. 🤪
-  * **Light-hearted "Secret" Sharing:** Share private information without it looking suspicious.
-  * **Educational Purposes:** A great way to learn about character encoding and JavaScript. 👨‍💻
-
------
-
-## 📂 File Structure
-
-The project is organized into a clean and easy-to-understand folder structure:
+## ⚙️ **Project Structure**
 
 ```
-emoji-encoder REPO
-├── emoji-encoder/
-│   ├── index.html       
-│   ├── script.js        
-│   └── style.css        
+emoji_encoder_automation/
+│
+├── pages/                    # All Page Object Model (POM) classes
+│   └── emoji_encoder_page.py
+│
+├── tests/                    # Test files
+│   └── test_emoji_encoder.py
+│
+├── utils/                    # Helper utilities, logging, and reporting
+│   ├── driver_factory.py
+│   ├── helper.py
+│   ├── transform_report.py   # Custom HTML report generator
+│   └── custom_report.html    # Jinja2 template for HTML report
+│
+├── reports/                  # Generated screenshots, logs & reports
+│   ├── screenshots/
+│   ├── logs/
+│   └── final_report_*.html
+│
+└── conftest.py               # Pytest setup & teardown configuration
 ```
 
------
+---
 
-## 🔧 Technology Stack
+## 💡 **Key Highlights**
 
-This project is built using standard web technologies:
+### 🧱 Page Object Model (POM)
 
-  * **HTML5:** For the structure of the web page.
-  * **CSS3:** For styling and animations.
-  * **JavaScript (ES6):** For all the encoding, decoding, and user interaction logic.
-  * **Bootstrap 5:** A CSS framework for responsive design and UI components.
-  * **Google Fonts:** Specifically, the `Inter` font for a clean typographic look.
+The framework follows the **POM pattern** for modularity:
 
------
+* Each page action (click, input, copy, paste, etc.) is wrapped inside reusable methods.
+* Decorated with `@screenshot_step` to automatically capture step-wise screenshots 📸.
 
-## ⚙️ Requirements
+---
 
-All you need to run this project is a modern web browser like Chrome, Firefox, or Safari. No other installations or configurations are required.
+### 🧪 Pytest-Based Automation
 
------
+Run tests using:
 
-## ▶️ How to Run
+```bash
+pytest -v --json-report \
+  --json-report-file=emoji_encoder_automation/reports/pytest_report.json
+```
 
-Running the project is as simple as opening a file\!
+✔ Automatically opens Chrome in headless mode
+✔ Captures screenshots at each logical step
+✔ Logs every XPath, action, and timestamp
+✔ Generates a **fully styled HTML report**
 
-1.  **Download:** Download the `emoji-encoder.zip` file.
-2.  **Unzip:** Extract the contents of the zip file.
-3.  **Open:** Locate the `index.html` file and open it with your web browser.
+---
 
-That's it\! The application will load immediately, and you can start encoding and decoding your messages. 🎉
+### 🧾 Custom HTML Reporting ✨
 
------
+A dynamic, visually rich HTML report is generated post execution:
 
-## ⚠️ Working video
+* ✅ Step-wise results (Pass / Fail)
+* 📸 Linked screenshots for every action
+* 🕒 Execution time for each step
+* 🧩 XPaths used during element interaction
+* 🧱 System + Config details (browser, OS, Python)
+* 🌙 Light / Dark theme toggle
 
+**Report Example Path:**
 
-<video width="320" height="240" controls>
-  <source src="emoji-encoder.mp4" type="video/mp4">
-</video>
+```
+emoji_encoder_automation/reports/final_report_2025xxxx_xxxxxx.html
+```
 
------
+**Custom report generator:**
+`emoji_encoder_automation/utils/transform_report.py`
+uses Jinja2 templates to create a modern, client-friendly layout.
 
-## 📹 Disclaimer
+---
 
-1. Open this project in desktop/laptop for best usage
-2. You need to do CTRL + A after selecting the emoji/character for encoding for proper working (due to security reasons)
+### 🗂️ Logs & Screenshots
 
------
+| Folder                     | Description                                 |
+| -------------------------- | ------------------------------------------- |
+| 🧾 `reports/logs/`         | All runtime logs with timestamps and status |
+| 🖼️ `reports/screenshots/` | Captured after every significant step       |
+| 🧠 `pytest_report.json`    | Intermediate JSON used to create HTML       |
 
-## 💖 Author
+**Example Log Path:**
+
+```
+emoji_encoder_automation/reports/logs/test_log_20251010_202628.log
+```
+
+---
+
+### 🧰 Setup & Installation
+
+1. **Clone the repo**
+
+   ```bash
+   git clone https://github.com/yourusername/emoji_encoder_automation.git
+   cd emoji_encoder_automation
+   ```
+
+2. **Create and activate a virtual environment**
+
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate   # (Windows)
+   source .venv/bin/activate   # (Mac/Linux)
+   ```
+
+3. **Install dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run the tests**
+
+   ```bash
+   pytest -v
+   ```
+
+5. **Generate the custom report**
+   The report is automatically created post-test in:
+
+   ```
+   emoji_encoder_automation/reports/
+   ```
+
+---
+
+## 🌈 **Advanced Features**
+
+### 🧠 Smart Screenshot Decorator
+
+Each step in the test is automatically captured with:
+
+```python
+@screenshot_step("Step Description")
+```
+
+This provides better debugging and visual validation.
+
+---
+
+### 🪶 Logging
+
+The `setup_logger()` method records every test step with timestamps:
+
+```
+[INFO] 2025-10-11 21:36:58 - Opening Emoji Encoder page
+[PASS] 2025-10-11 21:36:59 - Encoder switch clicked
+```
+
+---
+
+### 🕵️‍♂️ Failure Handling
+
+* Screenshots are attached automatically for **failed steps**.
+* Failure reason & traceback are clearly logged in the HTML report.
+
+---
+
+## 🌍 **Customization**
+
+You can easily modify:
+
+* **Theme toggle** (🌙 Dark / ☀️ Light)
+* **Report title / company logo**
+* **Additional metadata** (e.g. project, module, version)
+* **Chart.js summary** (Pass/Fail distribution pie chart)
+
+Edit:
+
+```
+utils/transform_report.py
+utils/custom_report.html
+```
+
+---
+
+## 🧑‍💻 **Tech Stack**
+
+| Category    | Tools Used                   |
+| ----------- | ---------------------------- |
+| Language    | 🐍 Python 3.11+              |
+| Test Runner | 🧪 Pytest                    |
+| Automation  | 🧭 Selenium WebDriver        |
+| Reporting   | 🪄 Jinja2, Pytest-HTML, JSON |
+| Logging     | 📜 Python logging module     |
+| Utilities   | ⏱ Pyperclip, datetime        |
+
+---
+
+## 🧩 **Future Enhancements**
+
+* 📊 Add interactive charts (Pass/Fail trend)
+* ☁️ Integrate with CI/CD (GitHub Actions / Jenkins)
+* 🔔 Slack / Email notifications for reports
+* 🧾 Export report as PDF
+
+---
+
+## 🏁 **Conclusion**
+
+This framework transforms ordinary Selenium automation into a **complete client-facing test solution** — combining:
+
+✅ **Code structure**
+✅ **Visual reporting**
+✅ **Traceable logs**
+✅ **Error transparency**
+
+> 💬 “A test is not complete until it tells its story — visually, clearly, and confidently.”
+
+---
+
+### ❤️ Credits
+
+* Built by: **Nitin Kumar**
+* Guided by: *ChatGPT (GPT-5)*
+* Framework: **Emoji Encoder Automation Project**
+* Year: **2025**
+
+---
+
+# 😎 Author
 
 [Nitin Kumar](https://linkedin.com/in/nitin30kumar/)
-
-
-
-
-
 
